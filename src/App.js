@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Header from "./components/Header";
+import Section from "./components/Section";
+import Footer from "./components/Footer";
+
+const App = () => {
+	let users = [
+		{
+			name: "Tom",
+			lastName: "Lewis",
+			age: 33,
+			id: Date.now(),
+		},
+		{
+			name: "John",
+			lastName: "Land",
+			age: 22,
+			id: Date.now(),
+		},
+		{
+			name: "Hosse",
+			lastName: "Enrikovich",
+			age: 60,
+			id: Date.now(),
+		},
+	];
+	// const [users, setUsers] = useState([]);
+
+	// function addUser(userObj) {
+	// 	let newUsers = [...users];
+	// 	newUsers.push(userObj);
+	// 	setUsers(newUsers);
+	// }
+	return (
+		<>
+			<Header />
+			<Section users={users} />
+			<Footer />
+		</>
+	);
+};
 
 export default App;
